@@ -1,0 +1,254 @@
+08:54:30 발신자 김현아 수신자 모두:
+	안녕하세요!
+08:54:31 발신자 김현아 수신자 모두:
+	강사님 저 git 사용하다가 계속 에러가 나는데
+08:54:40 발신자 김현아 수신자 모두:
+	error: failed to push some refs to 'https://github.com/Hyuna-Kim0317/day0727.git'
+08:54:49 발신자 김현아 수신자 모두:
+	계속 이런 메세지가 뜨더라구요ㅜㅠ
+08:55:34 발신자 김현아 수신자 모두:
+	찾아보니까 git 에 있는 파일이 제 pc 에 없어서 그렇다고 하는데, 새로 만든 프로젝트인데, 혹시 다른 이유 때문에 그런 걸까요?
+08:56:36 발신자 김현아 수신자 모두:
+	git pull (repository 주소) master 입력해도
+08:56:47 발신자 김현아 수신자 모두:
+	fatal: couldn't find remote ref master
+08:56:53 발신자 김현아 수신자 모두:
+	라고만 뜹니다..
+08:57:10 발신자 송파여성인력개발센터 spjob3@seoulwomanup.or.kr 수신자 모두:
+	서버에 업로드 하시다가 그런거에요, 아니면 다운로드 하시다가 그런거에요?
+08:57:23 발신자 김현아 수신자 모두:
+	업로드요!
+08:57:24 발신자 송파여성인력개발센터 spjob3@seoulwomanup.or.kr 수신자 모두:
+	push가 올리는거고, pull은 내려받는걸 말해요
+08:57:28 발신자 송파여성인력개발센터 spjob3@seoulwomanup.or.kr 수신자 모두:
+	그럼 push 하셔야 해요
+08:57:31 발신자 김현아 수신자 모두:
+	repository 새로 만들고 업로드하는데
+08:57:36 발신자 김현아 수신자 모두:
+	업로드가 안됩니다...
+08:57:37 발신자 송파여성인력개발센터 spjob3@seoulwomanup.or.kr 수신자 모두:
+	git push -u origin master
+08:57:44 발신자 송파여성인력개발센터 spjob3@seoulwomanup.or.kr 수신자 모두:
+	순서는
+08:58:02 발신자 송파여성인력개발센터 spjob3@seoulwomanup.or.kr 수신자 모두:
+	Git 홈페이지에서 먼저 프로젝트 repository를 만들어야 합니당
+08:58:36 발신자 김현아 수신자 모두:
+	네,,, git 홈페이에서 프로젝트 repository 새로 만들고 했어요
+08:58:39 발신자 홍은실 수신자 모두:
+	교실에 프로젝트 화면 너무 흔들리는데... 저거 왜저래요? ㅋㅋㅋ
+08:58:58 발신자 송파여성인력개발센터 spjob3@seoulwomanup.or.kr 수신자 모두:
+	그 이후에 로컬 pc에서 	1) git init 	2) git remote add origin 나의주소	3) git add . 	4) git commit -m "메시지"	5) git push -u origin master
+08:59:29 발신자 송파여성인력개발센터 spjob3@seoulwomanup.or.kr 수신자 모두:
+	교실 상황은 제가 알수 없어용 ㅜㅜ
+08:59:57 발신자 송파여성인력개발센터 spjob3@seoulwomanup.or.kr 수신자 모두:
+	담임샘 한테 말씀해보셔요~
+09:01:37 발신자 김현아 수신자 모두:
+	git init 해도 제 파일에 .git 이 안 생겨요ㅜㅠ
+09:07:12 발신자 송파여성인력개발센터 spjob3@seoulwomanup.or.kr 수신자 모두:
+	원격
+09:07:20 발신자 송파여성인력개발센터 spjob3@seoulwomanup.or.kr 수신자 모두:
+	원격 허용해주세용
+09:07:26 발신자 송파여성인력개발센터 spjob3@seoulwomanup.or.kr 수신자 모두:
+	화면 공유해주세요
+09:20:42 발신자 송혜령 수신자 모두:
+	네~~
+09:20:53 발신자 홍은실 수신자 모두:
+	교실에 사람이 많아요
+09:25:01 발신자 송혜령 수신자 모두:
+	선생님 ㅜㅜ
+09:25:17 발신자 송혜령 수신자 모두:
+	db설정이 센터에서 안되있어서...ㅜㅜ
+09:26:50 발신자 송혜령 수신자 모두:
+	db설정이 센터에 안되있어서요ㅜㅜ
+09:26:54 발신자 최승아 수신자 모두:
+	create table admin(	admin_idx number primary key	, id varchar2(20)	, pass varchar2(20)	, name varchar2(20)	)	create sequence  seq_admin	increment by 1	start with 1;
+09:27:05 발신자 최승아 수신자 모두:
+	이거 어제 적어놨던건데
+09:27:10 발신자 최승아 수신자 모두:
+	빠진거 있을 수 있어요 ㅠ
+09:27:16 발신자 최승아 수신자 모두:
+	그그 어제 집에서 하신분들은
+09:27:27 발신자 최승아 수신자 모두:
+	shop db 데이터베이스?? 테이블
+09:27:31 발신자 최승아 수신자 모두:
+	없으신거같은데..
+09:27:35 발신자 홍은실 수신자 모두:
+	쌤
+09:27:37 발신자 홍은실 수신자 모두:
+	그게아니라요
+09:27:43 발신자 홍은실 수신자 모두:
+	집에서 하던사람들이
+09:27:46 발신자 홍은실 수신자 모두:
+	여기에 테이블이 없어서
+09:27:50 발신자 홍은실 수신자 모두:
+	네
+09:31:25 발신자 김현아 수신자 모두:
+	상의 카테고리가 중복되어서 	상의-점퍼,가디건 //
+09:31:30 발신자 김현아 수신자 모두:
+	이렇게 나눠야 할거 같아요
+09:32:21 발신자 김현아 수신자 모두:
+	상의를 top 으로
+09:32:23 발신자 김현아 수신자 모두:
+	바꿀때
+09:34:22 발신자 김현아 수신자 모두:
+	정규화
+09:34:23 발신자 홍은실 수신자 모두:
+	정규화?
+09:36:09 발신자 김현아 수신자 모두:
+	pk
+09:38:59 발신자 김현아 수신자 모두:
+	foreign key
+09:39:29 발신자 김현아 수신자 모두:
+	top category..?
+09:41:15 발신자 김현아 수신자 모두:
+	non
+09:42:10 발신자 김현아 수신자 모두:
+	1
+09:42:23 발신자 김현아 수신자 모두:
+	안해줘요
+09:43:54 발신자 김현아 수신자 모두:
+	subcategory 도 중복됐어요
+09:46:15 발신자 김현아 수신자 모두:
+	subcategory
+09:54:19 발신자 박지인 수신자 모두:
+	없어요
+09:54:20 발신자 김현아 수신자 모두:
+	없어요
+09:58:38 발신자 김현아 수신자 모두:
+	테이블을 따로 분리해요..?
+10:00:05 발신자 김현아 수신자 모두:
+	product
+10:01:37 발신자 김현아 수신자 모두:
+	pk
+10:02:10 발신자 김현아 수신자 모두:
+	product
+10:05:36 발신자 김현아 수신자 모두:
+	강사님 product 테이블 product_idx 안 만들어도 되나요?
+10:06:13 발신자 김현아 수신자 모두:
+	강사님 product 테이블 product_idx 안 만들어도 되나요?????
+10:08:53 발신자 김현아 수신자 모두:
+	나쁜 거 같아요..
+10:08:55 발신자 변민희 수신자 모두:
+	안좋아요
+10:10:45 발신자 김현아 수신자 모두:
+	fk
+10:11:01 발신자 김현아 수신자 모두:
+	pk
+10:19:05 발신자 송파여성인력개발센터 spjob3@seoulwomanup.or.kr 수신자 모두:
+	■ system으로 로그인해서 	create  tablespace  shop	datafile '경로/XE/shop.dbf'  size 5M; 		create  user  shop	identified by 1234	default  tablespace shop	quota  unlimited  on shop;		grant create  table , create sequence , create session to shop; 		■ shop 으로 로그인해서  (  conn  shop/1234  )	  create  table  admin(	     admin_idx  number  primary key 	   , id varchar2(20)	   , pass varchar2(20)	   , name varchar2(20)	);	create sequence  seq_admin	increment by 1	start with 1;		insert into admin(admin_idx, id, pass, name) values(seq_admin.nextval, 'zino','1234','지노');
+10:22:59 발신자 정유진 수신자 모두:
+	네
+10:23:00 발신자 송혜령 수신자 모두:
+	네~
+10:23:06 발신자 변민희 수신자 모두:
+	6명 강의실에 있습니다!
+10:23:14 발신자 홍은실 수신자 모두:
+	교실에는 아까 인원 다 있어요
+10:27:13 발신자 송파여성인력개발센터 spjob3@seoulwomanup.or.kr 수신자 모두:
+	create table  topcategory(	   topcategory_idx  number  primary key 	 , topname varchar2(30)	)
+10:27:22 발신자 송파여성인력개발센터 spjob3@seoulwomanup.or.kr 수신자 모두:
+	\/
+10:27:58 발신자 송파여성인력개발센터 spjob3@seoulwomanup.or.kr 수신자 모두:
+	create sequence  seq_topcateogy	increment  by  1	start with 1
+10:28:01 발신자 김다래 수신자 모두:
+	오타 났어여
+10:28:12 발신자 김다래 수신자 모두:
+	탑 카테고리 오타났서영
+10:29:12 발신자 송파여성인력개발센터 spjob3@seoulwomanup.or.kr 수신자 모두:
+	select table_name user_tables;
+10:29:40 발신자 송파여성인력개발센터 spjob3@seoulwomanup.or.kr 수신자 모두:
+	select table_name from user_tables;
+10:30:02 발신자 송파여성인력개발센터 spjob3@seoulwomanup.or.kr 수신자 모두:
+	select sequence_name from user_sequences;
+10:30:36 발신자 김다래 수신자 모두:
+	넹
+10:34:08 발신자 송파여성인력개발센터 spjob3@seoulwomanup.or.kr 수신자 모두:
+	create  table  subcategory(	   subcategory_idx  number  primary key 	  , topcategory_idx  number 	  , subname varchar2(30)	  , constraint  fk_topcategory_subcategory  foreign key (topcategory_idx)	    references  topcategory(topcategory_idx) 	)
+10:35:41 발신자 송파여성인력개발센터 spjob3@seoulwomanup.or.kr 수신자 모두:
+	create  sequence  seq_subcategory 	increment  by  1	start with 1
+10:40:01 발신자 송파여성인력개발센터 spjob3@seoulwomanup.or.kr 수신자 모두:
+	create   table  product (	   product_idx  number  primary key 	 , subcategory_idx  number	 , product_name varchar2(40)	 , brand varchar2(30)	 , price number  default 0 	 , filename  varchar2(30)              	 , detail clob 	 , constraint  fk_subcategory_product  foreign key (subcategory_idx)	    references  subcategory(subcategory_idx)	)
+10:40:10 발신자 송파여성인력개발센터 spjob3@seoulwomanup.or.kr 수신자 모두:
+	/
+10:43:16 발신자 송파여성인력개발센터 spjob3@seoulwomanup.or.kr 수신자 모두:
+	create   table   product_size(	   product_size_idx   number  primary key 	 , product_idx  number	 , psize  varchar(10) 	 , constraint  fk_product_product_size  foreign key(product_idx) 	   references  product(product_idx)	)
+10:43:53 발신자 송파여성인력개발센터 spjob3@seoulwomanup.or.kr 수신자 모두:
+	create  sequence  seq_product_size 	increment by 1	start with 1
+10:43:57 발신자 송파여성인력개발센터 spjob3@seoulwomanup.or.kr 수신자 모두:
+	/
+10:45:41 발신자 송파여성인력개발센터 spjob3@seoulwomanup.or.kr 수신자 모두:
+	create  table  thumb(	    thumb_idx  number  primary key 	  , product_idx number 	  , img  varchar2(30)	  , constraint  fk_product_thumb  foreign key(product_idx)	    references  product(product_idx)	)
+10:46:13 발신자 송파여성인력개발센터 spjob3@seoulwomanup.or.kr 수신자 모두:
+	create  sequence  seq_thumb	increment   by  1	start  with 1
+10:46:52 발신자 송파여성인력개발센터 spjob3@seoulwomanup.or.kr 수신자 모두:
+	select table_name from user_tables;
+10:47:15 발신자 송파여성인력개발센터 spjob3@seoulwomanup.or.kr 수신자 모두:
+	select sequence_name from user_sequences;
+10:51:15 발신자 송파여성인력개발센터 spjob3@seoulwomanup.or.kr 수신자 모두:
+	insert into topcategory(topcategory_idx, topname)  values(seq_topcategory.nextval, '상의')	insert into topcategory(topcategory_idx, topname)  values(seq_topcategory.nextval, '하의')	insert into topcategory(topcategory_idx, topname)  values(seq_topcategory.nextval, '엑세서리')	insert into topcategory(topcategory_idx, topname)  values(seq_topcategory.nextval, '신발')
+10:52:53 발신자 송파여성인력개발센터 spjob3@seoulwomanup.or.kr 수신자 모두:
+	delete from topcategory;
+10:53:49 발신자 송파여성인력개발센터 spjob3@seoulwomanup.or.kr 수신자 모두:
+	insert into topcategory(topcategory_idx, topname)  values(seq_topcategory.nextval, 'Top');	insert into topcategory(topcategory_idx, topname)  values(seq_topcategory.nextval, 'Down');	insert into topcategory(topcategory_idx, topname)  values(seq_topcategory.nextval, 'Accessory');	insert into topcategory(topcategory_idx, topname)  values(seq_topcategory.nextval, 'Shoes');
+11:01:02 발신자 송파여성인력개발센터 spjob3@seoulwomanup.or.kr 수신자 모두:
+	insert into subcategory(subcategory_idx, topcategory_idx, subname)	values(seq_subcategory.nextval, 2 , '가디건');		insert into subcategory(subcategory_idx, topcategory_idx, subname)	values(seq_subcategory.nextval, 2 , '점퍼');		insert into subcategory(subcategory_idx, topcategory_idx, subname)	values(seq_subcategory.nextval, 2 , '니트');		insert into subcategory(subcategory_idx, topcategory_idx, subname)	values(seq_subcategory.nextval, 2 , '티셔츠');
+11:03:01 발신자 송파여성인력개발센터 spjob3@seoulwomanup.or.kr 수신자 모두:
+	insert into subcategory(subcategory_idx, topcategory_idx, subname) values(seq_subcategory.nextval, 3 , '청바지');	insert into subcategory(subcategory_idx, topcategory_idx, subname) values(seq_subcategory.nextval, 3 , '반바지');	insert into subcategory(subcategory_idx, topcategory_idx, subname) values(seq_subcategory.nextval, 3 , '면바지');	insert into subcategory(subcategory_idx, topcategory_idx, subname) values(seq_subcategory.nextval, 3 , '스커트');
+11:04:06 발신자 송파여성인력개발센터 spjob3@seoulwomanup.or.kr 수신자 모두:
+	insert into subcategory(subcategory_idx, topcategory_idx, subname) values(seq_subcategory.nextval, 4 , '귀걸이');	insert into subcategory(subcategory_idx, topcategory_idx, subname) values(seq_subcategory.nextval, 4 , '목걸이');	insert into subcategory(subcategory_idx, topcategory_idx, subname) values(seq_subcategory.nextval, 4 , '반지');	insert into subcategory(subcategory_idx, topcategory_idx, subname) values(seq_subcategory.nextval, 4 , '시계');
+11:04:40 발신자 박지인 수신자 모두:
+	선생님
+11:04:45 발신자 박지인 수신자 모두:
+	신발 아닌가요
+11:05:49 발신자 송파여성인력개발센터 spjob3@seoulwomanup.or.kr 수신자 모두:
+	insert into subcategory(subcategory_idx, topcategory_idx, subname) values(seq_subcategory.nextval, 5 , '운동화');	insert into subcategory(subcategory_idx, topcategory_idx, subname) values(seq_subcategory.nextval, 5 , '구두');	insert into subcategory(subcategory_idx, topcategory_idx, subname) values(seq_subcategory.nextval, 5 , '스니커즈');	insert into subcategory(subcategory_idx, topcategory_idx, subname) values(seq_subcategory.nextval, 5 , '슬리퍼');
+11:22:17 발신자 송혜령 수신자 모두:
+	항상  빨라요
+11:23:30 발신자 홍은실 수신자 모두:
+	ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ
+11:23:34 발신자 김다래 수신자 모두:
+	ㅋㅋㅋ큐ㅠ
+11:35:39 발신자 홍은실 수신자 모두:
+	subpage  smallpage
+11:42:08 발신자 김다래 수신자 모두:
+	빨간 줄 떠여 ...
+11:46:44 발신자 홍은실 수신자 모두:
+	우린 나와요
+11:48:33 발신자 김다래 수신자 모두:
+	저요
+11:48:39 발신자 정유진 수신자 모두:
+	저요
+11:49:01 발신자 송혜령 수신자 모두:
+	자동완성이 잘못뜬거 아니에요>?
+12:02:34 발신자 김현아 수신자 모두:
+	나와요
+12:02:35 발신자 최승아 수신자 모두:
+	잘나와요~
+12:02:36 발신자 박지인 수신자 모두:
+	나옵니다
+12:02:43 발신자 송혜령 수신자 모두:
+	나와요
+12:03:00 발신자 최승아 수신자 모두:
+	ㅠㅠ
+12:10:43 발신자 홍은실 수신자 모두:
+	화면 공유 해드릴까요 ?
+12:11:07 발신자 최승아 수신자 모두:
+	이렇게 나와요
+12:12:04 발신자 최승아 수신자 모두:
+	600괜찮아요
+12:12:08 발신자 최승아 수신자 모두:
+	잘올라갔어요
+12:12:21 발신자 최승아 수신자 모두:
+	네~
+12:45:00 발신자 송혜령 수신자 모두:
+	담당자님께 말씀드리면 될거같아요
+13:01:56 발신자 김다래 수신자 모두:
+	고생하셨습니다
+13:01:58 발신자 변민희 수신자 모두:
+	네 수고하셨습니다~
+13:02:08 발신자 윤지현 수신자 모두:
+	수고하셨습니다!!
+13:02:09 발신자 최승아 수신자 모두:
+	넵수고하셨습니다~!
+13:02:18 발신자 송파여성인력개발센터 spjob3@seoulwomanup.or.kr 수신자 모두:
+	맛잇게 드셔요~

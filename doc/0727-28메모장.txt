@@ -1,0 +1,211 @@
+----------------------------------0727필기
+<JAVA>
+-개발 과정-
+1) 기획서 (스토리보드) 작성
+2) 업무 분담 (PM-리더 주도 하)
+	-컨텐츠 위주로
+	ex) A회원관리 / B상품관리 / C...
+
+*기획서 : 월요일 오전 수업 시작 전까지
+
+1. 기획
+-산출물 : 스토리보드(기획팀)
+	ERD, UML (개발팀)
+2. 업무분담
+-어떤 라이브러리를 적용할지
+-어떤기술을 적용해야할지
+-과거에 개발해놓았던 코드가 있는지
+-개발환경 구축(개발 준비)
+
+3. 개발 시작
+-Git 시반
+-팀장 주도 하에 프로젝트 공통코드를 최초에 업로드
+-팀원들은 자신의 pc에 다운로드 받아 개발함
+-git기반으로 하되, 반드시 본인만의 branch에서 개발
+-본인이 맡은 컨텐츠와 관련된 DB Table에 대한 DTO DAO 개발
+
+erd -> db중립적
+entity개체
+
+*shop 계정에서 테이블 만들기
+create table admin(
+admin_idx number primary key
+, id varchar2(20)
+, pass varchar2(20)
+, name varchar2(20)
+)
+
+create sequence seq_admin
+increment by 1
+start with 1;
+
+insert into admin() values();
+
+010 6548 9536 - HHPP
+010-5284-5588 - 김지훈
+
+----------------------------------0728필기
+
+<JAVA>
+
+■ system으로 로그인해서 
+create  tablespace  shop
+datafile '경로/XE/shop.dbf'  size 5M; 
+
+create  user  shop
+identified by 1234
+default  tablespace shop
+quota  unlimited  on shop;
+
+grant create  table , create sequence , create session to shop; 
+
+■ shop 으로 로그인해서  (  conn  shop/1234  )
+  create  table  admin(
+     admin_idx  number  primary key 
+   , id varchar2(20)
+   , pass varchar2(20)
+   , name varchar2(20)
+);
+create sequence  seq_admin
+increment by 1
+start with 1;
+
+insert into admin(admin_idx, id, pass, name) values(seq_admin.nextval, 'zino','1234','지노');
+
+
+-----------------------------------------------------------
+---------------------0728쿼리문--------------------------
+1) 탑카테고리 테이블 생성
+create table  topcategory(
+   topcategory_idx  number  primary key 
+ , topname varchar2(30)
+);
+
+2) 1의 시퀀스 생성
+create sequence  seq_topcategory
+increment  by  1
+start with 1
+
+select table_name from user_tables;
+select sequence_name from user_sequences;
+
+3) 서브카테고리 생성 (제약조건+외래키)
+create  table  subcategory(
+   subcategory_idx  number  primary key 
+  , topcategory_idx  number 
+  , subname varchar2(30)
+  , constraint  fk_topcategory_subcategory  foreign key (topcategory_idx)
+    references  topcategory(topcategory_idx) 
+);
+
+4) 3의 시퀀스 생성
+create  sequence  seq_subcategory 
+increment  by  1
+start with 1
+
+5) product 테이블 생성 (제약조건+외래키)
+create   table  product (
+   product_idx  number  primary key 
+ , subcategory_idx  number
+ , product_name varchar2(40)
+ , brand varchar2(30)
+ , price number  default 0 
+ , filename  varchar2(30)              
+ , detail clob 
+ , constraint  fk_subcategory_product  foreign key (subcategory_idx)
+    references  subcategory(subcategory_idx)
+);
+
+6) 5의 시퀀스 생성
+create  sequence  seq_product 
+increment  by  1
+start with 1
+
+7) 상품 사이즈 테이블 생성
+create   table   product_size(
+   product_size_idx   number  primary key 
+ , product_idx  number
+ , psize  varchar(10) 
+ , constraint  fk_product_product_size  foreign key(product_idx) 
+   references  product(product_idx)
+)
+
+8) 7의 시퀀스 생성
+create  sequence  seq_product_size 
+increment  by  1
+start with 1
+
+9) 썸네일 테이블 생성
+create  table  thumb(
+    thumb_idx  number  primary key 
+  , product_idx number 
+  , img  varchar2(30)
+  , constraint  fk_product_thumb  foreign key(product_idx)
+    references  product(product_idx)
+)
+
+10) 9의 시퀀스 생성
+create  sequence  seq_thumb
+increment  by  1
+start with 1
+
+10*) 확인 -> 6개씩 있으면 됨
+select table_name from user_tables;
+select sequence_name from user_sequences;
+
+-----------------------여기부터 insert
+11) 탑카테고리 테이블 insert
+insert into topcategory(topcategory_idx, topname)  values(seq_topcategory.nextval, 'Top');
+insert into topcategory(topcategory_idx, topname)  values(seq_topcategory.nextval, 'Down');
+insert into topcategory(topcategory_idx, topname)  values(seq_topcategory.nextval, 'Accessory');
+insert into topcategory(topcategory_idx, topname)  values(seq_topcategory.nextval, 'Shoes');
+ 
+commit;
+
+*만약 지워야 할 때 사용 delete from topcategory;
+
+*한글로 바꿀때
+host chcp 949
+
+12) 서브카테고리 테이블 상의 insert
+insert into subcategory(subcategory_idx, topcategory_idx, subname)
+values(seq_subcategory.nextval, 1 , '가디건');
+
+insert into subcategory(subcategory_idx, topcategory_idx, subname)
+values(seq_subcategory.nextval, 1 , '점퍼');
+
+insert into subcategory(subcategory_idx, topcategory_idx, subname)
+values(seq_subcategory.nextval, 1 , '니트');
+
+insert into subcategory(subcategory_idx, topcategory_idx, subname)
+values(seq_subcategory.nextval, 1 , '티셔츠');
+
+commit;
+
+13) 서브카테고리 테이블 하의 insert
+insert into subcategory(subcategory_idx, topcategory_idx, subname) values(seq_subcategory.nextval, 2 , '청바지');
+insert into subcategory(subcategory_idx, topcategory_idx, subname) values(seq_subcategory.nextval, 2 , '반바지');
+insert into subcategory(subcategory_idx, topcategory_idx, subname) values(seq_subcategory.nextval, 2 , '면바지');
+insert into subcategory(subcategory_idx, topcategory_idx, subname) values(seq_subcategory.nextval, 2 , '스커트');
+
+commit;
+
+14) 서브카테고리 테이블 악세서리 insert
+insert into subcategory(subcategory_idx, topcategory_idx, subname) values(seq_subcategory.nextval, 3 , '귀걸이');
+insert into subcategory(subcategory_idx, topcategory_idx, subname) values(seq_subcategory.nextval, 3 , '목걸이');
+insert into subcategory(subcategory_idx, topcategory_idx, subname) values(seq_subcategory.nextval, 3 , '반지');
+insert into subcategory(subcategory_idx, topcategory_idx, subname) values(seq_subcategory.nextval, 3 , '시계');
+
+commit;
+
+15) 서브카테고리 테이블 신발 insert
+insert into subcategory(subcategory_idx, topcategory_idx, subname) values(seq_subcategory.nextval, 4 , '운동화');
+insert into subcategory(subcategory_idx, topcategory_idx, subname) values(seq_subcategory.nextval, 4 , '구두');
+insert into subcategory(subcategory_idx, topcategory_idx, subname) values(seq_subcategory.nextval, 4 , '스니커즈');
+insert into subcategory(subcategory_idx, topcategory_idx, subname) values(seq_subcategory.nextval, 4 , '슬리퍼');
+
+commit;
+
+****서브 카테고리 콤보박스 채우는 sql뮤ㅜㄴ
+select * from subcategory
+where topcategory_idx=1
