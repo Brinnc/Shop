@@ -9,6 +9,6 @@ import javax.swing.JPanel;
 public class ProductSubPage extends JPanel{
 	public ProductSubPage() {
 		setPreferredSize(new Dimension(950, 550));
-		setBackground(Color.YELLOW);
+		setBackground(Color.CYAN);
 	}
 }

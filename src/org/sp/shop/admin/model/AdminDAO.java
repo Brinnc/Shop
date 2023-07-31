@@ -8,11 +8,15 @@ import java.sql.SQLException;
 
 import org.sp.shop.admin.domain.Admin;
 
+import util.DBManager;
+
 //오직 어드민 테이블에 대한 CRUD만을 담당하기 위한 객체
 public class AdminDAO {
-	String url="jdbc:oracle:thin:@localhost:1521:XE";
-	String user="shop";
-	String pass="1234";
+	DBManager dbManager;
+	
+	public AdminDAO(DBManager dbManager) {
+		this.dbManager=dbManager;
+	}
 	
 	//아래의 로그인 메서드를 호출하는 사람에게 그 결과를 알려줘야함
 	//어떤 식의 결과? 즉, 로그인을 성공한 사람에게는 그 사람을 시스템이 기억해줘야함
@@ -25,10 +29,10 @@ public class AdminDAO {
 		
 		try {
 			//1) 드라이버 로드
-			Class.forName("oracle.jdbc.driver.OracleDriver");
+			//Class.forName("oracle.jdbc.driver.OracleDriver");
 			
 			//2) 드라이버 접속
-			con=DriverManager.getConnection(url, user, pass);
+			con=dbManager.connect();
 			if(con==null) {
 				System.out.println("접속실패");
 			}else {
@@ -57,35 +61,11 @@ public class AdminDAO {
 				
 			}
 			
-		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}finally {
 			
-			if(rs!=null) {
-				try {
-					rs.close();
-				} catch (SQLException e) {
-					e.printStackTrace();
-				}
-			}
-			
-			if(pstmt!=null) {
-				try {
-					rs.close();
-				} catch (SQLException e) {
-					e.printStackTrace();
-				}
-			}
-			
-			if(con!=null) {
-				try {
-					rs.close();
-				} catch (SQLException e) {
-					e.printStackTrace();
-				}
-			}
+			dbManager.release(con, pstmt, rs);
 			
 		}
 		return dto;

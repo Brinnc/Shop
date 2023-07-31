@@ -10,22 +10,27 @@ import java.util.List;
 
 import org.sp.shop.admin.domain.TopCategory;
 
+import util.DBManager;
+
 //탑카테고리에 대한 CRUD만을 수행하는 DAO객체
 public class TopCategoryDAO {
-	String url="jdbc:oracle:thin:@localhost:1521:XE";
-	String user="shop";
-	String pass="1234";
+	DBManager dbManager;
+	
+	public TopCategoryDAO(DBManager dbManager) {
+		this.dbManager=dbManager;
+	}
 	
 	//모든 레코드 가져오기
 	public List selectAll() {
+	
 		Connection con=null;
 		PreparedStatement pstmt=null;
 		ResultSet rs=null;
 		List<TopCategory> list=new ArrayList<TopCategory>();
 		
 		try {
-			Class.forName("oracle.jdbc.driver.OracleDriver");
-			con=DriverManager.getConnection(url, user, pass);
+			
+			con=dbManager.connect();
 			if(con==null) {
 				System.out.println("접속실패");
 			}else {
@@ -44,35 +49,10 @@ public class TopCategoryDAO {
 			}
 			
 			
-		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}finally {
-			if(rs!=null) {
-				try {
-					rs.close();
-				} catch (SQLException e) {
-					e.printStackTrace();
-				}
-			}
-			
-			if(pstmt!=null) {
-				try {
-					pstmt.close();
-				} catch (SQLException e) {
-					e.printStackTrace();
-				}
-			}
-			
-			if(con!=null) {
-				try {
-					con.close();
-				} catch (SQLException e) {
-					e.printStackTrace();
-				}
-			}
-			
+			dbManager.release(con, pstmt, rs);
 		}
 		return list;
 		

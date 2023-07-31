@@ -12,6 +12,8 @@ import javax.swing.JTextField;
 import org.sp.shop.admin.domain.Admin;
 import org.sp.shop.admin.model.AdminDAO;
 
+import util.DBManager;
+
 public class LoginForm extends JFrame{
 	AdminMain adminMain;
 	JTextField t_id;
@@ -22,6 +24,8 @@ public class LoginForm extends JFrame{
 	//DAO를 이용하여 DB업무를 수행하므로, DAO를 보유
 	AdminDAO adminDAO;
 	
+	DBManager dbManager;
+	
 	public LoginForm(AdminMain adminMain) {
 		super("관리자 로그인");
 		this.adminMain=adminMain; //메인 프레임 넘겨받기 (: 생성자 주입)
@@ -29,7 +33,8 @@ public class LoginForm extends JFrame{
 		t_id=new JTextField();
 		t_pass=new JPasswordField();
 		bt=new JButton("LOGIN");
-		adminDAO=new AdminDAO();
+		dbManager=new DBManager();
+		adminDAO=new AdminDAO(dbManager);
 		
 		//스타일
 		Dimension d=new Dimension(360, 45);
