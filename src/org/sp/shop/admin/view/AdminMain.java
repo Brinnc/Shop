@@ -63,12 +63,12 @@ public class AdminMain extends JFrame {
 		add(p_center);
 
 		setSize(1100, 600);
-		// setVisible(true);
+		setVisible(true);
 		setLocationRelativeTo(null);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 
 		// 로그인폼 생성
-		loginForm = new LoginForm(this);
+		//loginForm = new LoginForm(this);
 
 		// 최초로 상품 페이지는 보여지게 처리함
 		showHide(PRODUCT);
